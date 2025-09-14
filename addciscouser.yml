@@ -1,0 +1,12 @@
+---
+- name: Add Users
+  hosts: ctaas
+  gather_facts: no
+  become: yes
+  tasks: 
+    - name: Create User cisco
+      cisco.ios.ios_user:
+        name: cisco
+        configured_password: C1sc0123
+        privilege: 15
+        state: present
